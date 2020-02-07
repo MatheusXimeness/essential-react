@@ -24,13 +24,27 @@
 
     <script type="text/babel"> 
         // using the arrow functions the code is simpler
-        const Ola = props => <h1>Hello {props.quem} {props.qualidade}</h1>
- 
+        const Ola = props => { 
+           return(
+            // a tag h2 esta usando o props.children para pegar o elemento que esta como corpo da nossa tag "A vida é bela"
+            <div>   
+                <h1>    
+                    Hello {props.quem} {props.qualidade} 
+                </h1>
+                
+                <h2> {props.children} </h2> 
+            </div> 
+           );
+        };
 
         const ola = (
             <div>
-                <Ola quem="mundo" qualidade="cruel"/>
-                <Ola quem="gente" />
+                <Ola quem="mundo" qualidade="cruel"> 
+                    A vida é bela.
+                </Ola>
+                <Ola quem="gente"> 
+                    SEJAM MUITO BEM VINDOS
+                </Ola>
             </div>
         )
 

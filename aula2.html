@@ -34,13 +34,25 @@
                     return(
                         <div>
                             <h1>Hello {this.props.quem} {this.props.qualidade} !</h1>
+                            <h2> {this.props.children} </h2>
                         </div>
                     )
                 }
             }
 
+            const ola = (
+            <div>
+                <Ola quem="mundo" qualidade="cruel"> 
+                    A vida é bela.
+                </Ola>
+                <Ola quem="gente"> 
+                    SEJAM MUITO BEM VINDOS
+                </Ola>
+            </div>
+        )
 
-        ReactDOM.render(<Ola quem="people" qualidade="from earth"/>, document.getElementById("app"));
+
+        ReactDOM.render(ola, document.getElementById("app"));
     </script>
 
 </body>
