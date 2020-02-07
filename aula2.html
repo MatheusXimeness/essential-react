@@ -9,7 +9,7 @@
 
     <script 
         crossorigin 
-        src="https://unpkg.com/react@16/umd/react.development.js">
+        src="https://unpkg.com/react@16/umd/react.development.js"> // script que contem a classe de componentes
     </script>
     
     <script 
@@ -23,18 +23,24 @@
     <div id="app"></div>
 
     <script type="text/babel"> 
-        // using the arrow functions the code is simpler
-        const Ola = props => <h1>Hello {props.quem} {props.qualidade}</h1>
- 
+        // i will create the same component from the previous class, but now using class
+            class Ola extends React.Component { //derivando o componente da classe base "React.Component"
+                
+                constructor(props){
+                    super(props);
+                }
+                
+                render() {
+                    return(
+                        <div>
+                            <h1>Hello {this.props.quem} {this.props.qualidade} !</h1>
+                        </div>
+                    )
+                }
+            }
 
-        const ola = (
-            <div>
-                <Ola quem="mundo" qualidade="cruel"/>
-                <Ola quem="gente" />
-            </div>
-        )
 
-        ReactDOM.render(ola, document.getElementById("app"));
+        ReactDOM.render(<Ola quem="people" qualidade="from earth"/>, document.getElementById("app"));
     </script>
 
 </body>
