@@ -23,17 +23,13 @@
     <div id="app"></div>
 
     <script type="text/babel"> 
-        function Ola(props) {
-            return(
-                <div>
-                    <h1>Hello {props.quem}</h1>
-                </div>
-            );
-        }
+        // using the arrow functions the code is simpler
+        const Ola = props => <h1>Hello {props.quem} {props.qualidade}</h1>
+ 
 
         const ola = (
             <div>
-                <Ola quem="mundo" />
+                <Ola quem="mundo" qualidade="cruel"/>
                 <Ola quem="gente" />
             </div>
         )
